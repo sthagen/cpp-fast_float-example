@@ -31,15 +31,10 @@ CPMAddPackage(
   GIT_TAG 2020.12
 )
 
-if(fast_float_ADDED)
-  target_include_directories(fast_float INTERFACE ${fast_float_SOURCE_DIR}/)
-  message("Added ${fast_float_SOURCE_DIR}/ as include")
-endif()
-
-
 # ---- Create binary ----
 
 add_executable(fast_float_example main.cpp)
+target_link_libraries(fast_float_example PUBLIC fast_float)
 set_target_properties(fast_float_example PROPERTIES CXX_STANDARD 17)
 
 # ---- Enable testing ----
