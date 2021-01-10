@@ -32,9 +32,8 @@ CPMAddPackage(
 )
 
 if(fast_float_ADDED)
-  add_library(fast_float INTERFACE)
-  target_include_directories(fast_float INTERFACE ${fast_float_SOURCE_DIR}/include/)
-  message("Added ${fast_float_SOURCE_DIR}/include/ as include")
+  target_include_directories(fast_float INTERFACE ${fast_float_SOURCE_DIR}/)
+  message("Added ${fast_float_SOURCE_DIR}/ as include")
 endif()
 
 
